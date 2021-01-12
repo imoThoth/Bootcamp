@@ -84,7 +84,7 @@ const aaron = {
     name: 'testPerson'
   }
 
- module.exports[Harry,Meghan,William,aaron,archieWindsor, person]
+ module.exports = {person, archieWindsor, Harry, William, Meghan};
   
 
 

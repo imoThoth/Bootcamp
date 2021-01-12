@@ -1,6 +1,7 @@
 const { expect } = require('@jest/globals');
-const person = require('./person'); /* specifies what file this test would be focused on */
-const archieWindsor = require('./person')
+//const person = require('./person'); /* specifies what file this test would be focused on */
+const { person, archieWindsor } = require('./person')
+
 
 describe('person', () => {
 
