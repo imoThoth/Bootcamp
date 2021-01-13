@@ -1,4 +1,4 @@
-const Person = require("./Person") /**Error person does not declare through super */
+const Person = require("./Person") 
 /**
  * Creates a class which represents crew-member
  * This class inherits name from an existing class person
@@ -6,7 +6,7 @@ const Person = require("./Person") /**Error person does not declare through supe
  */
 
 
-class crewMember{
+class crewMember extends Person{
     /**
      * Create a constructor, with parameters, Job role, Age and Name
      * @param {string} name - Shows crew members name 
@@ -16,9 +16,9 @@ class crewMember{
 
      constructor(name, jobRole, age){
         
-         super(name);
-         this.jobRole = jobRole;
-         this.age = age;
+         super(name)
+         this.jobRole = jobRole
+         this.age = age
      }
 
      /**
@@ -26,6 +26,9 @@ class crewMember{
       * The greeting shows the host name
       * and displays a heart-warming message
       */
+     crewGreeting(){
+         console.log("Hello I am, " + this.name +" your crew host for this journey")
+     }
 
 }
 module.exports = crewMember

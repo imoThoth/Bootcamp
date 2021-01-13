@@ -1,21 +1,20 @@
+const Plane = require('./Plane')
+
 /**
  * This represents an Airport class
  */
 
 class Airport{
 
-    /**Properties of airport class
-     * @param {String} name - Represents the persons name
-     * @param {Number} terminals - Represents Airport terminals
-     * @param {Number} availaiblePlanes -Represents Availaible Planes
+     availaiblePlanes = ['dynamo', 'olympia', 'celestia']
+
+      /**Properties of airport class
+     * @param {string} airportName - Represents the airports name
+     * @param {number} terminals - Represents Airport terminals
+     * @param {number} availaiblePlanes -Represents Availaible Planes
      */
 
-     /**
-      * Represents Constructor
-      * Error test added, to ensure there are no empty fields
-      */
-
-     constructor(airportName, terminals, planes) {
+     constructor(airportName,terminals) {
 
             if(!airportName){
                 throw new Error("Cannot have empty field")
@@ -27,8 +26,22 @@ class Airport{
 
         this.airportName = airportName;
         this.terminals = terminals;
-        this.planes = planes
-     
+
+       
     }
+
+    /**
+     * Creaes method fly
+     * Takes parameter destination as string
+     * @param {string} destination - Represents plane destination
+     */
+    fly(destination){
+
+        if(!destination){
+            throw new Error("Cannot have empty field")
+        }
+        this.availaiblePlanes.pop()
+    }
+
 }
 module.exports = Airport

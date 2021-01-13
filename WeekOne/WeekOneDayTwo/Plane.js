@@ -1,14 +1,14 @@
 
-  const Person = require ('./Person')/**Error: Person does not define */
+  const Person = require ('./Person')
   const crewMember = require ('./crewMember')
-  const passenger = require ('./Passenger')
+  const Passenger = require ('./Passenger')
   
   /**
  * This class represents a plane
  * Uses imports passenger and crewmember
  */
 
-class Plane{
+class Plane extends Person{
 
     /**
      * Defines the properties of plane
@@ -18,12 +18,7 @@ class Plane{
      * 
      */
 
-     /**
-      * 
-      * Constructor function
-      */
-
-    constructor(name, ticketNumber, jobRole, Person){
+    constructor(airportName, name, ticketNumber, jobRole,){
 
       if(!airportName){
           throw new Error("Plane must have destination")
@@ -31,8 +26,8 @@ class Plane{
 
       super(name, ticketNumber, jobRole)
       this.airportName = airportName
-      this.crew = [crewMembers];
-      this.passengers = [passengers]
+      this.crew = [];
+      this.passengers = []
       this.ticketNumber = ticketNumber
 
       console.log("Welcome to " + airportName)
@@ -44,7 +39,7 @@ class Plane{
      * assigns them to passenger or crewMember
      */
     boardPassenger(Person){
-      if(Person instanceof passenger){
+      if(Person instanceof Passenger){
             this.passengers.push(Person)
 
       } else if (Person instanceof crewMember){

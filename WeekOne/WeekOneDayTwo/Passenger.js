@@ -1,16 +1,18 @@
-/** 
- * Creates a Passenger class
- * Which inherits from person 
-*/
 
 const Person = require("./Person");
+
+/** 
+ * Creates a Passenger class
+ * Which inherits name from person 
+*/
+
 
 class Passenger extends Person {
     
     /**
-     * Creates ticket number
+     * Creates Constructor
      * @param {string} ticketNumber - name of the ticket
-     *  
+     * @param {string} name - inherits name from class person
      */
     constructor(name, ticketNumber) {
         super(name)

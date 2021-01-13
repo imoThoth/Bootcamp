@@ -4,7 +4,8 @@
 
 class Person{
     /**
-     * @param {string} name - Represents name
+     * Creates Constructor with parameter name
+     * @param {string} name - Represents an individuals name
      * 
      */
 
@@ -12,4 +13,4 @@ class Person{
          this.name = name;
      }
 }
-module.exports = Person;
+module.exports = Person
