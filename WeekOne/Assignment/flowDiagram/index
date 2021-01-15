@@ -1,0 +1,50 @@
+Problem Definition.
+
+--Create Scooter hiring system
+-Electric scooters need to be charged at scooter charging station
+-Users can only hire and unplug scooter IF battery charged
+-Users ALWAYS use up baterry charger, battery will be empty after scooter used
+-Takes 2000ms to charge scooter(asynchronuous)
+oCreate async function setTimeout and setInterval(call back on next tick or when timer expires)
+
+
+Class Scooter{
+    Constructor(name)
+    string type, color, name
+    int speed
+    int battery
+    
+    create() - calls array all scooter, adds a new scooter
+    void repair()
+    void check()
+}
+
+Class chargingStation{
+    []allScooter
+
+    constructor(location)
+    string location
+
+    method(charge) - charges scooter
+    method(hire) - checks if scooter charged, then hire
+    method(dBag) void method
+
+}
+
+class User{
+    Constructor (age, account, name) - check if over 18 and has over 5 in account
+    int age
+    int account
+    string name             
+    void balance - charge
+}
+
+
+
+
+- Create class diagram for main classes in the scoooter system
+-Show relationship between classes(inheritance and composition)
+-Sequence an UML diagram showing interaction between classes(inheritance, composition, etc)
+-Code classes
+-Unit test classes
+-jsdoc . Material

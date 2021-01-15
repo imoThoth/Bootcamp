@@ -1,0 +1,72 @@
+@startuml interaction
+
+class Scooter{
+    string type
+    string color
+    string name
+    int speed
+    int battery
+
+    string create()
+    void repair()
+}
+
+class chargingStation{
+   static[] allScooter
+   string location
+   
+   void charge()
+   void hire()
+   void dBag()
+   void check()
+}
+
+class User{
+    static[] scooter
+    int age
+    int account
+    string name
+    
+    void balance()
+    void ride()
+    void inspect()
+    void return()
+}
+
+chargingStation "1" *-- "many" Scooter : composition
+User o-- Scooter : agregation
+
+@enduml
+
+@startuml sequence
+
+Scooter -> chargingStation : Send created scooter
+chargingStation -> chargingStation: Check created scooter
+chargingStation -> Scooter : Needs a fix
+Scooter -> chargingStation : Fix complete
+User -> chargingStation : Hire a scooter
+chargingStation -> User : Check balance
+chargingStation -> chargingStation : Check Charge
+chargingStation -> User : Send scooter to user
+User -> User : Ride
+User -> chargingStation : Return
+chargingStation -> User : Send scooter to user
+User -> User : Inspect scooter
+User -> chargingStation : Needs repair
+chargingStation -> Scooter : Needs repair
+Scooter -> chargingStation :    Fix complete
+
+@enduml
+
+@startuml useCase
+left to right direction
+actor "User" as User
+rectangle chargingStation {
+  usecase "Charge scooter" as UC1
+  usecase "Repair scooter" as UC2
+  usecase "Hire scooter" as UC3
+}
+User --> UC1
+User --> UC2
+User --> UC3
+@enduml

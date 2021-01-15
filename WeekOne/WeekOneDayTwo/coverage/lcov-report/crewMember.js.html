@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Plane.js</title>
+    <title>Code coverage report for crewMember.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> Plane.js</h1>
+        <h1><a href="index.html">All files</a> crewMember.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -90,27 +90,7 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,18 +108,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,66 +119,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-  const Person = require ('./Person')
-  const crewMember = require ('./crewMember')
-  const Passenger = require ('./Passenger')
-  
-  /**
- * This class represents a plane
- * Uses imports passenger and crewmember
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const Person = require("./Person") 
+/**
+ * Creates a class which represents crew-member
+ * This class inherits name from an existing class person
+ * 
  */
 &nbsp;
-class Plane extends Person{
 &nbsp;
+class crewMember extends Person{
     /**
-     * Defines the properties of plane
-     * @param {String} airportName - This represents the destination
-     * @param {String} passengers - This represents the passengers
-     * @param {String} crewMembers - This represents the crewMembers
-     * 
+     * Create a constructor, with parameters, Job role, Age and Name
+     * @param {string} name - Shows crew members name 
+     * @param {string} jobRole - Shows crew members role
+     * @param {number} age  - Shows crew members age
      */
 &nbsp;
-    constructor(airportName, name, ticketNumber, jobRole,){
+     constructor(name, jobRole, age){
+        
+         super(name)
+         this.jobRole = jobRole
+         this.age = age
+     }
 &nbsp;
-      if(!airportName){
-          throw new Error("Plane must have destination")
-      }
-&nbsp;
-      super(name, ticketNumber, jobRole)
-      this.airportName = airportName
-      this.crew = [];
-      this.passengers = []
-      this.ticketNumber = ticketNumber
-&nbsp;
-      console.log("Welcome to " + airportName)
-    }
-    
-    /**
-     * Function Board passenger
-     * arranges person into plane 
-     * assigns them to passenger or crewMember
-     */
-    boardPassenger(Person){
-      if(Person instanceof Passenger){
-            this.passengers.push(Person)
-&nbsp;
-      } else <span class="missing-if-branch" title="else path not taken" >E</span>if (Person instanceof crewMember){
-        this.crew.push(Person)
-      }
-    }
+     /**
+      * Creates a method, which displays a greeting
+      * The greeting shows the host name
+      * and displays a heart-warming message
+      */
+     crewGreeting(){
+         console.log("Hello I am, " + this.name +" your crew host for this journey")
+     }
 &nbsp;
 }
-module.exports = Plane;</pre></td></tr></table></pre>
+module.exports = crewMember</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
