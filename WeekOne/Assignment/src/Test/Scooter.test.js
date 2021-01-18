@@ -1,7 +1,6 @@
 
-
-const chargingStation = require('../Classes/chargingStation')
 const Scooter = require('../Classes/Scooter')
+const ChargingStation = require('../Classes/ChargingStation')
 
 
 
@@ -12,6 +11,11 @@ describe('Scooter Constructor', function () {
         expect(aeroHead.scooterID).toBe("aeroHead")
         
     })
+
+    test('does not have a name', function() {
+        expect(() => new Scooter()).toThrowError('Please insert Scooter ID')
+    })
+     
 
     test('has a color', function(){
         const aeroHead = new Scooter("aeroHead", 'yellow' , 60 , 100 )
@@ -25,16 +29,34 @@ describe('Scooter Constructor', function () {
 
     test('battery', function(){
         const aeroHead = new Scooter("aeroHead", 'yellow', 60, 100)
-        expect(aeroHead.battery).toBe(100)
+        expect(aeroHead.battery).toBe(100) 
+    })
+
+    test('damage', function(){
+        const aeroHead = new Scooter("aeroHead", 'yellow', 60, 100, false)
+        expect(aeroHead.damage).toBe(false)
     })
 
 
      test('Send scooter', function(){
         const aeroHead = new Scooter("aeroHead", 'yellow', 60, 100)
-        expect(chargingStation.allScooter).toContain("aeroHead")
-       
-
+        expect(ChargingStation.allScooter).toContain("aeroHead")
      })
 
+     test('Send scooter damage', function(){
+        const aeroHead = new Scooter("aeroHead", 'yellow', 60, 100, true)
+        expect(ChargingStation.allScooter).toContain(true)
+     })
+    
+})
+
+describe('Method repairScooter', function () {
+
+    test('damage', function(){
+        const aeroHead = new Scooter("Repair", 'yellow', 60, 100, true)
+       // expect (aeroHead.damage).toBe(true)
+        aeroHead.repairAllScooter()
+        expect(aeroHead.damage).toBe(false)
+    })
 
 })

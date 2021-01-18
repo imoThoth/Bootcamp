@@ -1,43 +1,54 @@
-
-const charge = require('./chargingStation')
+const ChargingStation = require('./ChargingStation')
 
 /**Creates a class scooter
  * 
  */
+
 class Scooter{
+
     /**
      * Creates constructor
-     * @param {string}type - Scooter type
      * @param {string}color - Scooter color
      * @param {string}scooterID - Scooter name
      * @param {int}speed - Scooter Maximum speed
      * @param {int}battery - Battery Charge
      */
 
-     constructor(scooterID, color, speed, battery){
+     constructor(scooterID, color, speed, battery, damage = false)
+     {
 
-         this.scooterID = scooterID;
-         charge.allScooter.push(Scooter)
-         this.color = color;
-         this.speed = speed;
+        if(!scooterID){
+          throw new Error("Please insert Scooter ID")
+        }
+
+         this.scooterID = scooterID
+         this.color = color
+         this.speed = speed
          this.battery = battery
-         this.damage = false;
-        
+         this.damage = damage
+
+        ChargingStation.allScooter.push(scooterID, damage)
+     }
+
+     /**
+      * Creates method 
+      * Iterates through scooter array
+      * changes damage to false
+      */
+    repairAllScooter(){
+
+       var check = ChargingStation.allScooter
+
+       for(var i = 0; i < ChargingStation.length; i++){
          
-    }
-
-
-    
-    /**
-     * Method to repair scooter
-     */
-    repair(){
-      if(this.damage){
-        this.damage = false;
-        console.log("Repair Complete")
-      }
-    }
-
+        change = ChargingStation.pop
+        console.log(change)
+        if(change == true){
+          return false
+        }
+          console.log(change)
+     }
+   }
 }
 module.exports = Scooter
 

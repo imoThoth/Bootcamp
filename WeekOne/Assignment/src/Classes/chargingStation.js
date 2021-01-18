@@ -1,52 +1,26 @@
-const user = require('../Classes/user')
-const Scooter = require('../Classes/Scooter')
+const user = require('./user')
+const Scooter = require('./Scooter')
 
 /**
  * Create Class Charging Station
  * 
  */
 
-class chargingStation{
+ class ChargingStation{
 
     /**
-     * Creates a static variable for all scooter
+     * Creates a static array for all scooter
      */
-    static allScooter = []
+   static allScooter = []
+ 
 
     /**
      * Creates a costructor
      */
 
-    constructor(){
-     
-    }
+    constructor(){}
 
-/**
- * Used to charge the scooter battery
-*/
- //charge(){}
 
- /**
-  * Method to hire a scooter
-  * Charges the user 5£
-  */
- 
-  hire(){
-    user.myScooters.push()
-  }
- 
-  /**
-   * Method to add money into bank vault
-   * 
-   */
- // dBag()
- 
- 
-  /**
-   * Method to check quality of scooter
-   */
- // check()
- 
 }
-module.exports = chargingStation
+module.exports = ChargingStation
 

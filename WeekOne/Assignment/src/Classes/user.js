@@ -2,7 +2,7 @@
  * Creates a class User
  * Represents who buys the scooter
  */
-const Scooter = require("../Classes/chargingStation")
+const Scooter = require("./ChargingStation")
 
 class user{
     /**
