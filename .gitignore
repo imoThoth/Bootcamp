@@ -1,4 +1,6 @@
 node_modules
+./Week1Day1/node_modules
+./WeekOneDayTwo/node_modules
 .env
 auth_config.json
 *.iml
@@ -6,7 +8,6 @@ auth_config.json
 target
 *.class
 .DS_Store
-*.sqlite
 *.log
 *.vscode
 coverage
