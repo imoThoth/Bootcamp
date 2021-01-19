@@ -26,8 +26,15 @@ class Scooter{
          this.speed = speed
          this.battery = battery
          this.damage = damage
+     }
 
-        ChargingStation.allScooter.push(scooterID, damage)
+     /**
+      * Method push scooter(Void)
+      * Pushes a new Scooter to charging station
+      */
+
+     pushScooter(){
+       ChargingStation.allScooter.push(this)
      }
 
      /**
@@ -37,19 +44,16 @@ class Scooter{
       */
     repairAllScooter(){
 
-       var check = ChargingStation.allScooter
+       for(var i = 0; i < ChargingStation.allScooter.length; i++){
 
-       for(var i = 0; i < ChargingStation.length; i++){
-         
-        change = ChargingStation.pop
-        console.log(change)
-        if(change == true){
-          return false
-        }
-          console.log(change)
+            if(this.damage = true){
+              this.damage = false
+            }
+          }
+          
      }
-   }
-}
+   } 
+
 module.exports = Scooter
 
   

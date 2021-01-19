@@ -38,15 +38,14 @@ describe('Scooter Constructor', function () {
     })
 
 
+describe('Method pushScooter', function () {
+
      test('Send scooter', function(){
         const aeroHead = new Scooter("aeroHead", 'yellow', 60, 100)
-        expect(ChargingStation.allScooter).toContain("aeroHead")
+        aeroHead.pushScooter()
+        expect(ChargingStation.allScooter).toContain(aeroHead)
      })
 
-     test('Send scooter damage', function(){
-        const aeroHead = new Scooter("aeroHead", 'yellow', 60, 100, true)
-        expect(ChargingStation.allScooter).toContain(true)
-     })
     
 })
 
@@ -58,5 +57,5 @@ describe('Method repairScooter', function () {
         aeroHead.repairAllScooter()
         expect(aeroHead.damage).toBe(false)
     })
-
+    })
 })
