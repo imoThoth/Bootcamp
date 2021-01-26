@@ -1,6 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('../DayThree/Restaurants.sqlite');
+const db = new sqlite3.Database('..\DayThreeRestaurants.sqlite');
 const fsp = require("fs").promises;
+const {sequelize} = require('..\WeekThree\Sequelize\sequelize_index.js')
 
 async function load(){
     console.log("Retrieving Database");
@@ -14,8 +15,6 @@ async function load(){
         db.serialize(function(){
 
             let insert1;
-
-            try{
 
                 insert1 = db.prepare(`INSERT INTO RESTAURANTS(Title, imageLink) VALUES(?,?)`);
                 for (let i = 0; i< restaurantArray.length; i++){
@@ -32,21 +31,11 @@ async function load(){
                     }
         
                 }
-
-            } finally{
-                
             }
-        } 
-    }
-
-    finally{
-
-    }
-        
-
+    }    
+}
+          
            
-
- 
 
 load();
 

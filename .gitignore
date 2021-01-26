@@ -8,8 +8,6 @@ target
 .DS_Store
 *.log
 *.vscode
-coverage
-out
 sonar*
 scanner*
 .scanner*
