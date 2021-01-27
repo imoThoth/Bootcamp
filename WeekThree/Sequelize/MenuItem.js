@@ -24,14 +24,14 @@ module.exports = {
 };
 
 // local testing - remove when using Jest
-
+/** 
 (async () => {
     await sequelize.sync({ force: true }); // recreate db
     const r = await MenuItem.create({ name:'cheesy chips', price: 4.50})
 
     console.log("Inserted menu name is:" + r.name);
 })();
-
+*/
 
 
 

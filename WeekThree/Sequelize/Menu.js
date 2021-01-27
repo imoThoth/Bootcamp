@@ -1,4 +1,5 @@
 const {sequelize, DataTypes, Model} = require('./sequelize_index');
+const {MenuItem} = require('./MenuItem')
 
 /**
  * Represents a Restaurant
@@ -15,8 +16,8 @@ Menu.init({
     timestamps: false,
 });
 
-//Menu.hasMany(MenuItem, { foreignKey: 'menu_id' });
-//MenuItem.belongsTo(Menu, { as: 'owner', foreignKey: 'menu_id' });
+Menu.hasMany(MenuItem,  {as: 'items', foreignKey: 'menu_id' });
+MenuItem.belongsTo(Menu, { foreignKey: 'menu_id' });
 
 module.exports = {
    Menu
@@ -24,13 +25,14 @@ module.exports = {
 
 // local testing - remove when using Jest
 
+/*
 (async () => {
     await sequelize.sync({ force: true }); // recreate db
     const r = await Menu.create({ name: 'Drinks'})
 
     console.log("Inserted menu name is:" + r.name);
 })();
-
+*/
 
 
 
