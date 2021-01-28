@@ -1,0 +1,21 @@
+
+
+<div class="menus">
+   <h1>{{restaurants.name}}</h1>
+  
+    {{#each menus}}
+    <article>
+         <h2>{{this.title}}</h2>
+         <d1>
+            {{#each this.items}}
+                 <div>
+                     <dt>{{this.name}}</dt>
+                     <dd>£{{this.price}}</dd>
+                 </div>
+            {{/each}}
+        </d1>
+    </article>
+    {{/each}}
+   
+
+</div>

@@ -1,4 +1,4 @@
-const {Restaurant} = require('./Restaurant');
+const {Restaurant} = require('./Restaurants');
 const  {Menu} = require('./Menu')
 const {MenuItem} = require('./MenuItem')
 const fsp = require('fs').promises;
