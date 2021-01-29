@@ -8,6 +8,7 @@ const {loadThenInsert} = require('./populateDB');
 const { MenuItem } = require('./MenuItem');
 const request = require('express')
 
+
 const app = express();
 const portNumber = 3000;
 
@@ -23,6 +24,10 @@ app.engine('handlebars', handlebars)
 app.set('view engine', 'handlebars')
 
 app.use(express.static('public')); //create file resource
+
+//Data Parsing
+app.use(express.urlencoded({ extended: false}))
+app.use(express.json())
 
 
 app.get('/', async(req, res) => {
@@ -56,6 +61,46 @@ app.get('/restaurants/:id', async (req, res) => {
 
     
     res.render('restaurant', {restaurant, menus})
+})
+
+
+
+/*
+app.get('restaurants/:id/delete', async(req, res) => {
+    Restaurant.findByPk(req.param.id)
+        .then(restaurant => {
+            restaurant.destroy()
+            res.destroy()
+            res.redirect('/')
+           
+        })
+})
+*/
+
+
+app.route("/restaurants/:id/delete").get((req,res) => {
+        res.redirect("/")
+}).post((req,res)=>{
+    console.log(req.params.id)
+    Restaurant.findByPk(req.params.id)
+    .then(restaurant => {
+        restaurant.destroy()
+        res.redirect('/')
+    }).catch(error=>console.log(error))
+})
+
+app.get('/form', async(req,res) =>{
+    res.render('form') 
+})
+
+app.post('/form', async (req, res) => {  
+    // console.log(req.body)
+    await Restaurant.create(req.body)
+    res.redirect('/')
+})
+
+app.get('/ratings', async(req,res) =>{
+    res.render('ratings')
 })
 
 

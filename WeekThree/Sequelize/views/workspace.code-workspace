@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\JavaScript Projects\\Arrays"
+		},
+		{
+			"path": "..\\..\\..\\..\\Web Dev Jobs"
+		},
+		{
+			"path": "..\\..\\..\\..\\WhitehatLearning"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

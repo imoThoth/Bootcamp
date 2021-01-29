@@ -1,28 +1,61 @@
 <h1>Restaurants</h1>
 
+<!--<a href="/">Form</a>-->
+ <button onclick="location.href='/form'" type="button">
+        Form</button>
+
 <div class= "container">
 
     {{#each restaurants}}
     
-    
-
-    <div class= "restaurants ">
-        <a href="/restaurants/{{this.id}}">
+   
+    <div class= "restaurants" onclick="restaurant({{this.id}})">
+       
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img src="{{this.image}}" alt="Avatar" style="width:300px;height:300px;">
+                    
+        
                 </div>
                 <div class="flip-card-back">
+
+                   <!-- <button id= "delete" onclick="location.href='/restaurants/{{this.id}}/delete'" >&#10008;</button> -->
+
+                    <form action="/restaurants/{{this.id}}/delete" method="post">
+                    <input type="submit" name="Delete" value="Delete" />
+                    </form>
+
+                  <!--  <button onclick="location.href='/ratings'" type = "button">Rate Me</button> -->
+                    <a href="/ratings">Rate Me</a>
+
                     <h1>{{this.name}}</h1> 
                      {{#each this.menus}}
                     <p>{{this.title}}</p>
                     {{/each}} 
+
+                    <div class = "stars">
+                       <span class="star">&nbsp;</span>  
+                       <span class="star">&nbsp;</span>
+                       <span class="star">&nbsp;</span>
+                       <span class="star">&nbsp;</span>
+                       <span class="star">&nbsp;</span>   
+                    </div>
+
                 </div>
             </div>
         </div>
-        </a>
+        
     </div>
     {{/each}}
 
+    <script>
+        function restaurant(paramid){
+            window.location.href = '/restaurants/'+paramid
+        }
+
+    </script>
+
 </div>
+
+
