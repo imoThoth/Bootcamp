@@ -1,27 +1,50 @@
 
 <a href = "/">Home Page</a>
 
+
+<title>Resaurants Menu</title>
+
 <!--<button onclick="location.href='form.handlebar' " type="button">
         Home Page</button>-->
 
 <!--<button type="button" href = "/" >Click Me!</button>-->
 
 <div class="menus">
-   <h1>{{restaurants.name}}</h1>
+
+
+   <h1 id="dinerHeader">{{restaurant.name}} 
+       <div class="fb-like" data-href="http://localhost:3000/" 
+       data-width="300" data-layout="standard" data-action="like" 
+       data-size="small" data-share="true"></div> </h1>
   
-    {{#each menus}}
+   {{#each menus}}
     <article>
          <h2>{{this.title}}</h2>
+    <dl> 
          <d1>
+            
             {{#each this.items}}
+            <dl>
                  <div>
                      <dt>{{this.name}}</dt>
                      <dd>£{{this.price}}</dd>
                  </div>
             {{/each}}
+
+            </dl>
         </d1>
+    </dl>    
     </article>
     {{/each}}
-   
+
 
 </div>
+
+<style>
+
+    .menus{
+    border: 5px solid #FFFF00;
+    text-align: center;
+    }
+  
+</style>
